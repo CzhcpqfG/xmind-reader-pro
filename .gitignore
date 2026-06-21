@@ -70,3 +70,6 @@ coverage/
 
 # XMind 样例文件（不应提交）
 *.xmind
+
+# 测试 fixture 除外
+!**/tests/fixtures/*.xmind
