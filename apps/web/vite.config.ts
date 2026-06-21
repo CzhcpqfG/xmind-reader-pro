@@ -2,7 +2,12 @@ import { defineConfig } from 'vite';
 import react from '@vitejs/plugin-react';
 import { resolve } from 'path';
 
+// GitHub Pages 部署在项目子路径下；本地开发保持根路径
+const repository = process.env.GITHUB_REPOSITORY || '';
+const base = repository ? `/${repository.split('/')[1]}/` : '/';
+
 export default defineConfig({
+  base,
   plugins: [react()],
   resolve: {
     alias: {
