@@ -1,0 +1,72 @@
+# 依赖与包管理
+node_modules/
+.pnpm-store/
+.yarn/
+.npm/
+
+# 构建产物
+dist/
+out/
+.wxt/
+.turbo/
+.output/
+dist-electron/
+*.tsbuildinfo
+.eslintcache
+
+# 环境变量与本地配置
+.env
+.env.local
+.env.*.local
+.env.development.local
+.env.test.local
+.env.production.local
+
+# IDE 与编辑器
+.idea/
+.vscode/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# 编辑器临时保存文件
+*.backup
+*.orig
+
+# 日志
+npm-debug.log*
+pnpm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+lerna-debug.log*
+*.log
+
+# 缓存
+.cache/
+.parcel-cache/
+.vite/
+.temp/
+.tmp/
+
+# 内部任务规划文档（不应出现在开源仓库）
+.trae/
+
+# 临时调试脚本
+analyze-xmind.mjs
+verify-parse*.mjs
+debug-*.mjs
+test-parse.mjs
+debug-output.txt
+debug-content.mjs
+debug-detail.mjs
+debug-full.mjs
+
+# 测试覆盖率报告
+coverage/
+*.lcov
+.nyc_output/
+
+# XMind 样例文件（不应提交）
+*.xmind

@@ -1,0 +1,31 @@
+{
+  "name": "@xmind-reader/exporter",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XMind 导出工具 - Markdown / SVG / PNG / PDF",
+  "author": "XMind Reader Pro",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b --watch",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@xmind-reader/core": "workspace:*",
+    "jspdf": "^2.5.1",
+    "svg2pdf.js": "^2.2.3"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "rimraf": "^6.0.0"
+  }
+}

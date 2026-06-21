@@ -1,0 +1,31 @@
+{
+  "name": "@xmind-reader/extension",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XMind 阅读器 - 浏览器扩展 (Chrome / Firefox / Edge)",
+  "author": "XMind Reader Pro",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wxt",
+    "build": "wxt build",
+    "zip": "wxt zip",
+    "clean": "rimraf dist .output *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@xmind-reader/core": "workspace:*",
+    "@xmind-reader/renderer": "workspace:*",
+    "@xmind-reader/ui-components": "workspace:*",
+    "@xmind-reader/exporter": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "wxt": "^0.19.0",
+    "typescript": "^5.5.0",
+    "rimraf": "^6.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
+  }
+}

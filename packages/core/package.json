@@ -1,0 +1,30 @@
+{
+  "name": "@xmind-reader/core",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XMind 文件解析与布局计算核心库",
+  "author": "XMind Reader Pro",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b --watch",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "jszip": "^3.10.1",
+    "fast-xml-parser": "^4.4.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "rimraf": "^6.0.0"
+  }
+}

@@ -1,0 +1,36 @@
+{
+  "name": "@xmind-reader/ui-components",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XMind 阅读器 React UI 组件库",
+  "author": "XMind Reader Pro",
+  "license": "MIT",
+  "type": "module",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": { "types": "./dist/index.d.ts", "import": "./dist/index.js" }
+  },
+  "scripts": {
+    "build": "tsc -b",
+    "dev": "tsc -b --watch",
+    "test": "vitest run",
+    "lint": "tsc --noEmit",
+    "clean": "rimraf dist *.tsbuildinfo"
+  },
+  "dependencies": {
+    "@xmind-reader/core": "workspace:*",
+    "@xmind-reader/renderer": "workspace:*",
+    "@xmind-reader/exporter": "workspace:*",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "zustand": "^4.5.0"
+  },
+  "devDependencies": {
+    "typescript": "^5.5.0",
+    "vitest": "^2.0.0",
+    "rimraf": "^6.0.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0"
+  }
+}

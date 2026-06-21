@@ -1,0 +1,45 @@
+{
+  "name": "xmind-reader-pro",
+  "version": "0.1.0",
+  "private": true,
+  "description": "XMind 文件阅读器 - 桌面应用 (Electron)、浏览器扩展 (Chrome/Firefox)、以及纯网页版 (Vite)",
+  "author": "XMind Reader Pro",
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "build": "turbo build",
+    "dev": "turbo dev",
+    "dev:web": "pnpm --filter @xmind-reader/web dev",
+    "build:web": "pnpm --filter @xmind-reader/web build",
+    "dev:electron": "pnpm --filter @xmind-reader/electron dev",
+    "test": "turbo test",
+    "lint": "turbo lint",
+    "clean": "turbo clean"
+  },
+  "keywords": [
+    "xmind",
+    "mindmap",
+    "reader",
+    "viewer",
+    "electron",
+    "browser-extension",
+    "vite",
+    "react",
+    "typescript",
+    "knowledge-management"
+  ],
+  "homepage": "https://github.com/CzhcpqfG/xmind-reader-pro",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/CzhcpqfG/xmind-reader-pro.git"
+  },
+  "bugs": {
+    "url": "https://github.com/CzhcpqfG/xmind-reader-pro/issues"
+  },
+  "funding": "https://github.com/sponsors/CzhcpqfG",
+  "devDependencies": {
+    "turbo": "^2.1.0",
+    "typescript": "^5.5.0"
+  },
+  "packageManager": "pnpm@9.10.0"
+}
