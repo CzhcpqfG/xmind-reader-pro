@@ -10,6 +10,7 @@ jobs:
   test:
     name: Test on ${{ matrix.os }} (Node ${{ matrix.node-version }})
     runs-on: ${{ matrix.os }}
+    timeout-minutes: 20
     strategy:
       fail-fast: false
       matrix:
@@ -37,8 +38,35 @@ jobs:
       - name: Type check
         run: pnpm lint
 
-      - name: Build
-        run: pnpm build
+      # Electron 在 Windows runner 上可能触发 native 构建异常（exit -1073741502），
+      # 因此在矩阵中排除 Electron，单独在 Ubuntu 上构建。
+      - name: Build (exclude Electron)
+        run: pnpm exec turbo run build --filter='!@xmind-reader/electron'
 
       - name: Test
         run: pnpm test
+
+  build-electron:
+    name: Build Electron (ubuntu-latest / Node 22)
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup pnpm
+        uses: pnpm/action-setup@v4
+        with:
+          version: 9.10.0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+          cache: "pnpm"
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build Electron
+        run: pnpm exec turbo run build --filter='@xmind-reader/electron...'
