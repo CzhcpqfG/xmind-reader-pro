@@ -34,7 +34,7 @@ function renderNodeMarkdown(node: MindMapNode, depth: number, lines: string[]): 
   }
 
   if (node.markers && node.markers.length > 0) {
-    const markerIds = node.markers.map(m => m.markerId).join(', ');
+    const markerIds = node.markers.map((m: { markerId: string }) => m.markerId).join(', ');
     lines.push(`${indent}  > 标记: ${markerIds}`);
   }
 
